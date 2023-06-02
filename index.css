@@ -47,3 +47,7 @@ b, p {
 img {
 	width: 7%;
 }
+
+#thresholdwarning {
+	color: rgb(248, 255, 143);
+}

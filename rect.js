@@ -80,7 +80,19 @@ export function divideIntoRectangles(image, threshold) {
 		width: image.length,
 		height: image[0].length,
 	}
-	splitRectangle(initialRectangle)
+	
+	if (threshold > 0) {
+		splitRectangle(initialRectangle)
+	} else {
+		for (const x in image) {
+			for (const y in image[x]) {
+				rectangles.push({
+					rect: { x, y, width: 1, height: 1 },
+					color: image[x][y],
+				})
+			}
+		}
+	}
 
 	return rectangles
 }

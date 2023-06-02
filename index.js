@@ -44,7 +44,7 @@ async function init() {
 		}	
 	}
 
-	document.querySelector("small").innerHTML = "note: the squares/lines that may show up here will not <br> show up in-game as long as your offset is set correctly <br> in the settings."
+	document.querySelector("#linewarning").innerHTML = "note: the squares/lines that may show up here will not <br> show up in-game."
 }
 
 // this function isn't used anymore but i didnt wanna get rid of it
@@ -192,6 +192,13 @@ fileupload.addEventListener("change", async (event) => {
 
 	threshold.addEventListener("input", () => {
 		setDebugText("threshold", threshold.value)
+
+		if (threshold.value < 1) {
+			document.querySelector("#thresholdwarning").innerHTML = "note: a threshold of zero removes the block <br> compression entirely, instead directly <br> copying the pixels. use with caution! <br>"
+		} else {
+			document.querySelector("#thresholdwarning").innerHTML = ""
+		}
+
 		run()
 	})
 
