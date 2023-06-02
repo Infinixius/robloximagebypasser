@@ -50,7 +50,7 @@ export const header = `<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" x
 			<bool name="Massless">false</bool>
 			<token name="Material">256</token>
 			<string name="MaterialVariantSerialized"></string>
-			<string name="Name">Part</string>
+			<string name="Name">BypassedImage</string>
 			<CoordinateFrame name="PivotOffset">
 				<X>0</X>
 				<Y>0</Y>

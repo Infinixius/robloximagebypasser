@@ -21,6 +21,7 @@
 				<b>blocks: </b> <p id="debug_blocks"></p> <br>
 				<b>improvement: </b> <p id="debug_improvement"></p> <br>
 				<b>threshold: </b> <p id="debug_threshold"></p> <br>
+				<!--<b>offset: </b> <p id="debug_offset"></p> <br>-->
 				<b>time elapsed: </b> <p id="debug_time"></p> <br>
 
 				<br>
@@ -28,7 +29,10 @@
 				<h3>settings: </h3> 
 				<b>image: </b> <input type="file" id="image" /> <br>
 				<b>enable extreme threshold values: </b> <input type="checkbox" id="extreme"> <br>
+				<b>enable transparency: </b> <input type="checkbox" id="transparency"> <br>
 				<b>threshold: </b> <input type="range" min="1" max="1000" value="50" class="slider" id="threshold"> <br>
+				<!--<b>offset: </b> <input type="range" min="0" max="0.05" value="0.05" step="0.001" step class="slider" id="offset"> <br>-->
+
 				<button id="export">export!</button>
 				<div id="output"></div>
 			</div>
@@ -42,6 +46,9 @@
 		<div class="container">
 			<h1>Final Image</h1>
 			<canvas id="final"></canvas>
+			<div>
+				<small></small>
+			</div>
 		</div>
 		
 		<div id="credits">

@@ -13,9 +13,11 @@ const blocks_ctx = blocks_canvas.getContext("2d")
 const final_canvas = document.querySelector("#final")
 const final_ctx = final_canvas.getContext("2d")
 
+//const offset = document.querySelector("#offset")
 const threshold = document.querySelector("#threshold")
 const fileupload = document.querySelector(`input[type="file"]`)
 const extreme = document.querySelector("#extreme")
+const enabletransparency = document.querySelector("#transparency")
 const error = document.querySelector("#error")
 
 // the init function is called when an image is uploaded
@@ -40,8 +42,9 @@ async function init() {
 			original_ctx.fillStyle = `rgba(${pixel[0]}, ${pixel[1]}, ${pixel[2]}, ${pixel[3] ?? 255})`
 			original_ctx.fillRect(x, y, 1, 1)
 		}	
-
 	}
+
+	document.querySelector("small").innerHTML = "note: the squares/lines that may show up here will not <br> show up in-game as long as your offset is set correctly <br> in the settings."
 }
 
 // this function isn't used anymore but i didnt wanna get rid of it
@@ -147,12 +150,12 @@ function exportToROBLOX(rect) {
 			image.width,
 			image.height,
 
-			0.05,
+			0.05, //offset.value,
 
 			block.color[0],
 			block.color[1],
 			block.color[2],
-			block.color[3] ?? 255
+			enabletransparency.checked ? block.color[3] ?? 255 : 255
 		)
 	}
 
@@ -191,6 +194,11 @@ fileupload.addEventListener("change", async (event) => {
 		setDebugText("threshold", threshold.value)
 		run()
 	})
+
+	// offset.addEventListener("input", () => {
+	// 	setDebugText("offset", offset.value)
+	// 	run()
+	// })
 })
 
 document.querySelector("#export").addEventListener("click", () => {
@@ -213,3 +221,14 @@ extreme.addEventListener("click", () => {
 		threshold.max = 1000
 	}
 })
+
+// reset all inputs on page load
+window.onload = () => {
+	threshold.value = 100
+	//offset.value = 0
+	extreme.checked = false
+	enabletransparency.checked = false
+
+	setDebugText("threshold", threshold.value)
+	//setDebugText("offset", offset.value)
+}
