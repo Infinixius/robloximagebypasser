@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+body {
+	font-family: "Open Sans", sans-serif;
+	background-color: #000;
+	color: #fff;
+}
+
+canvas {
+	width: 20vw;
+}
+
+#error {
+	color: red;
+	font-size:24px;
+}
+
+h3 {
+	margin: 0;
+}
+
+textarea {
+	width: 20vw;
+	height: 25vh;
+	resize: none;
+}
+
+b, p {
+	float: left;
+	margin: 0;
+	padding-left: 1vw;
+}
+
+.container {
+	float: left;
+	margin: 0;
+	padding-left: 1vw;
+}
+
+#credits {
+	right: 0;
+	position: absolute;
+	height: 100vh;
+	width: 21vw;
+}
+
+img {
+	width: 7%;
+}

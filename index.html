@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>roblox image bypasser</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="./index.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Original Image</h1>
+			<canvas	canvas id="original"></canvas>
+
+			<div id="debug">
+				<code id="error"></code><br>
+				<h3>information:</h3>
+				<b>size: </b> <p id="debug_size"></p> <br>
+				<b>pixels: </b> <p id="debug_pixels"></p> <br>
+				<b>blocks: </b> <p id="debug_blocks"></p> <br>
+				<b>improvement: </b> <p id="debug_improvement"></p> <br>
+				<b>threshold: </b> <p id="debug_threshold"></p> <br>
+				<b>time elapsed: </b> <p id="debug_time"></p> <br>
+
+				<br>
+
+				<h3>settings: </h3> 
+				<b>image: </b> <input type="file" id="image" /> <br>
+				<b>enable extreme threshold values: </b> <input type="checkbox" id="extreme"> <br>
+				<b>threshold: </b> <input type="range" min="1" max="1000" value="50" class="slider" id="threshold"> <br>
+				<button id="export">export!</button>
+				<div id="output"></div>
+			</div>
+		</div>
+
+		<div class="container">
+			<h1>Blocks</h1>
+			<canvas id="blocks"></canvas>
+		</div>
+
+		<div class="container">
+			<h1>Final Image</h1>
+			<canvas id="final"></canvas>
+		</div>
+		
+		<div id="credits">
+			<h3>what is this?</h3>
+			this website lets you bypass roblox's <br>
+			image moderation system by manually <br>
+			reconstructing an image using individual <br>
+			pixels. <br>
+
+			<br>
+			
+			many other similar tools that do this <br>
+			exist, but this one is different, as it <br>
+			uses <a href="https://en.wikipedia.org/wiki/Rectangle_packing">rectangle packing</a> to reconstruct <br>
+			the image inside of roblox, which heavily <br>
+			reduces the amount of pixels needed and <br>
+			greatly increases performance in-game. <br>
+
+			<br>
+
+			<b style="padding-left:0;">to use this</b>, upload an image under settings, <br>
+			then use the threshold slider to adjust the <br>
+			quality of the image. a block count of ~5,000 <br>
+			usually works fine for me. <br>
+
+			<br>
+
+			once done, click the export button and <br>
+			download the <code>.rbxmx</code> file. import it into <br>
+			roblox and you should be done! <br>
+
+			<br>
+
+			do note that some images just don't work, <br>
+			just try taking a screenshot of the image <br>
+			and using that. <br>
+
+			<br>
+
+			please note this is purely for educational <br>
+			and research purposes, and i am not <br>
+			responsible for any misuse of this website. <br>
+			(do not generate porn! <img src="./images/1984.gif">) <br>
+
+			<br>
+
+			the source code is on <a href="https://github.com/infinixius/robloximagebypasser">github!</a> please <br>
+			give the repo a 🌟 if you find this useful
+		</div>
+		
+		<script src="./lib/image.js"></script>
+		<script src="./lib/keylimepie.js"></script>
+		<script type="module" src="./lib/deltae.js"></script>
+
+		<script type="module" src="./export.js"></script>
+		<script type="module" src="./rect.js"></script>
+		<script type="module" src="./utility.js"></script>
+		<script type="module" src="./index.js"></script>
+	</body>
+</html>
